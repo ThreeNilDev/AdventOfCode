@@ -9,11 +9,12 @@ namespace AdventOfCode
         public List<Int32> ElfBackpackCount;
         int elfCount;
         string[] Backpack;
+        string filePath = "@../../input.txt";
 
         public Day1()
 		{
             Console.WriteLine("Hello Day 1");
-            ReadTextFile();
+            ReadTextFile(filePath);
             ItemsIntoBags();
             Console.WriteLine("There is " + elfCount + " elfs with backpacks");
             FindElfWithTheMostCalories();
@@ -21,9 +22,9 @@ namespace AdventOfCode
         }
 
 
-        void ReadTextFile()
+        void ReadTextFile(string filepath)
         {
-            string filePath = "@../../input.txt";
+            
             if (!File.Exists(filePath))
             {
                 Console.WriteLine("File does not exist :{0} ", filePath);
